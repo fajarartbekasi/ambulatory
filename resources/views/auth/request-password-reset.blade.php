@@ -1,71 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- Meta Information -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Reliqui Ambulatory - Reset Password</title>
+    <title>Reliqui Ambulatory - Login</title>
 
     <!-- Style sheets-->
     <link href='{{ mix('app.css', 'vendor/ambulatory') }}' rel='stylesheet' type='text/css'>
 </head>
-<body class="auth-body">
-    <div class="form-auth">
-        <div class="text-center mb-5">
-            <h1 class="text-uppercase">
-                <a href="/" class="text-dark">{{ config('app.name') }}</a>
-            </h1>
-        </div>
 
-        <div class="form-card">
-            <form method="POST" action="{{ route('ambulatory.password.email') }}" class="form-horizontal">
-                @csrf
-
-                <div class="d-flex w-100 justify-content-between mb-3">
-                    <h4>Reset password</h4>
-
-                    <a href="{{ route('ambulatory.login') }}"> Sign in?</a>
-                </div>
-
-                @if (session()->has('invalidResetToken'))
-                    <div class="alert alert-danger">
-                        Invalid reset token.
-                    </div>
-                @endif
-
-                @if (session()->has('passwordResetLinkSent'))
-                    <div class="alert alert-success">
-                        We have e-mailed your password reset link!
-                    </div>
-                @endif
-
-                <div class="form-group">
-                    <label for="email" class="text-muted">E-mail address</label>
-
-                    <input id="email"
-                        type="email"
-                        name="email"
-                        value="{{ old('email') }}"
-                        class="form-control form-control-lg border-0 bg-light {{ $errors->first('email', 'is-invalid') }}"
-                        autofocus>
-
-                    @if ($errors->has('email'))
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $errors->first('email') }}</strong>
+<body class="bg-gray-200">
+    <div class="flex flex-wrap justify-center items-center min-h-screen">
+        <div class="w-full max-w-sm">
+            <div class="flex justify-center">
+                <p class="text-5xl mb-2">{{ config('app.name') }}</p>
+            </div>
+            @if (session()->has('invalidResetToken'))
+                <div class="flex justify-center">
+                    <div class="p-2 mb-3 bg-red-800 items-center rounded-full text-red-100 leading-none lg:rounded-full flex lg:inline-flex"
+                        role="alert">
+                        <span class="flex rounded-full bg-red-500 uppercase px-2 py-1 text-xs font-bold mr-3">
+                            hmm.
                         </span>
+                        <span class="font-semibold mr-2 text-left flex-auto">
+                            Invalid reset token.
+                        </span>
+                    </div>
+                </div>
+            @endif
+            @if (session()->has('passwordResetLinkSent'))
+                <div class="flex justify-center">
+                    <div class="p-2 mb-3 bg-teal-700 items-center rounded-full text-teal-200 leading-none lg:rounded-full flex lg:inline-flex"
+                        role="alert">
+                        <span class="flex rounded-full bg-teal-400 uppercase px-2 py-1 text-xs font-bold mr-3">
+                            horay.
+                        </span>
+                        <span class="font-semibold mr-2 text-left flex-auto">
+                            We have e-mailed your password reset link!
+                        </span>
+                    </div>
+                </div>
+            @endif
+            <form action="{{ route('ambulatory.password.email') }}" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4"
+                method="POST">
+                @csrf
+                <div class="flex items-center justify-between">
+                    <label href="" class="font-sans text-xl mb-4">
+                        Reset password
+                    </label>
+                    <a href="{{ route('ambulatory.login') }}"
+                        class="inline-block align-baseline text-md mb-4 text-blue-400 hover:text-blue-darker">
+                        Sign in?
+                    </a>
+                </div>
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-400 text-sm font-bold mb-2">
+                        {{ __('E-Mail Address') }}
+                    </label>
+                    <input type="text"
+                           name="email"
+                           id="email"
+                           class="bg-gray-200 appearance-none border {{ $errors->has('email') ? ' is-invalid' : '' }} border-gray-200 rounded w-full py-2 px-3 text-gray-600 mb-3 leading-tight focus:outline-none focus:shadow-outline"
+                           value="{{ old('email') }}">
+                    @if ($errors->has('email'))
+                        <p class="text-red-500 text-xs italic" role="alert">{{ $errors->first('email') }}.</p>
                     @endif
                 </div>
-
-                <div class="forn-group">
-                    <button class="btn btn-lg btn-primary btn-block" type="submit">Reset</button>
+                <div class="flex items-center mb-8">
+                    <button
+                        class="bg-blue-500 w-full hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+                        type="submit">
+                        Reset
+                    </button>
                 </div>
-
-                <p class="text-center text-muted mt-5">
-                    Don't have an account? <a href="{{ route('ambulatory.register') }}">Sign Up</a>
-                </p>
+                <div class="flex justify-center items-center text-center mt-5">
+                    <p class="text-center text-gray-500 text-base  mr-1">
+                        Don't have an account?
+                    </p>
+                    <a href="{{ route('ambulatory.register') }}" class="text-blue-400 text-center text-base"> Sign Up</a>
+                </div>
             </form>
         </div>
+
     </div>
 </body>
 </html>
