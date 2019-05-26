@@ -10,7 +10,7 @@
     <!-- Style sheets-->
     <link href='{{ mix('app.css', 'vendor/ambulatory') }}' rel='stylesheet' type='text/css'>
 </head>
-<body>
+<body class="bg-gray-200">
 <div id="ambulatory" v-cloak>
     <alert
         :message="alert.message"
@@ -21,18 +21,18 @@
         :confirmation-cancel="alert.confirmationCancel"
         v-if="alert.type">
     </alert>
+    <sidebar-menu></sidebar-menu>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-3 sidebar">
-                <sidebar-menu></sidebar-menu>
-            </div>
+    {{-- <div class="container">
+            <div class="row">
+                <div class="col-3 sidebar">
+                </div>
 
-            <div class="col-9 bg-white border p-0">
-                <router-view></router-view>
+                <div class="col-9 bg-white border p-0">
+                    <router-view></router-view>
+                </div>
             </div>
-        </div>
-    </div>
+        </div> --}}
 </div>
 
 <!-- Global Ambulatory Object -->
