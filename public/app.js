@@ -47959,20 +47959,22 @@ var render = function() {
         key: "entry-data",
         fn: function(slotProps) {
           return [
-            _c("div", { staticClass: "form-group row" }, [
-              _c(
-                "label",
-                {
-                  staticClass:
-                    "col-sm-4 col-form-label text-md-right font-weight-bold",
-                  attrs: { for: "name" }
-                },
-                [_vm._v("Name")]
-              ),
+            _c("div", { staticClass: "md:flex md:items-center mb-6" }, [
+              _c("div", { staticClass: "md:w-1/3" }, [
+                _c(
+                  "label",
+                  {
+                    staticClass:
+                      "block text-gray-900 font-bold md:text-right mb-1 md:mb-0 pr-4",
+                    attrs: { for: "name" }
+                  },
+                  [_vm._v("\n                    Name\n                ")]
+                )
+              ]),
               _vm._v(" "),
               _c(
                 "div",
-                { staticClass: "col-sm-6" },
+                { staticClass: "md:w-2/3" },
                 [
                   _c("input", {
                     directives: [
@@ -47984,7 +47986,7 @@ var render = function() {
                       }
                     ],
                     staticClass:
-                      "form-control form-control-lg bg-light border-0",
+                      "appearance-none block w-64 bg-gray-200 text-gray-900 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-purple-500",
                     attrs: { id: "name", type: "text", autofocus: "" },
                     domProps: { value: slotProps.formData.name },
                     on: {
@@ -48009,20 +48011,26 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "form-group row" }, [
-              _c(
-                "label",
-                {
-                  staticClass:
-                    "col-sm-4 col-form-label text-md-right font-weight-bold",
-                  attrs: { for: "description" }
-                },
-                [_vm._v("Description")]
-              ),
+            _c("div", { staticClass: "md:flex md:items-center mb-6" }, [
+              _c("div", { staticClass: "md:w-1/3" }, [
+                _c(
+                  "label",
+                  {
+                    staticClass:
+                      "block text-grey-darker font-bold md:text-right mb-1 md:mb-0 pr-4",
+                    attrs: { for: "inline-username" }
+                  },
+                  [
+                    _vm._v(
+                      "\n                    Description\n                "
+                    )
+                  ]
+                )
+              ]),
               _vm._v(" "),
               _c(
                 "div",
-                { staticClass: "col-sm-6" },
+                { staticClass: "md:w-2/3" },
                 [
                   _c("input", {
                     directives: [
@@ -48034,7 +48042,7 @@ var render = function() {
                       }
                     ],
                     staticClass:
-                      "form-control form-control-lg bg-light border-0",
+                      "appearance-none block w-64 bg-gray-200 text-gray-900 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-purple-500",
                     attrs: { id: "description", type: "text" },
                     domProps: { value: slotProps.formData.description },
                     on: {
@@ -48098,7 +48106,6 @@ var render = function() {
               _c(
                 "router-link",
                 {
-                  staticClass: "list-group-item list-group-item-action",
                   attrs: {
                     to: {
                       name: "specializations-edit",
@@ -48107,22 +48114,20 @@ var render = function() {
                   }
                 },
                 [
-                  _c(
-                    "div",
-                    { staticClass: "d-flex w-100 justify-content-between" },
-                    [
-                      _c("h5", { staticClass: "mb-1" }, [
+                  _c("div", { staticClass: "px-6 hover:bg-gray-100" }, [
+                    _c("div", { staticClass: "flex justify-between" }, [
+                      _c("h5", { staticClass: "mb-1 text-gray-900" }, [
                         _vm._v(_vm._s(slotProps.entry.name))
                       ]),
                       _vm._v(" "),
-                      _c("small", { staticClass: "text-muted" }, [
+                      _c("small", { staticClass: "text-gray-500" }, [
                         _vm._v(_vm._s(_vm.timeAgo(slotProps.entry.created_at)))
                       ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "mb-1" }, [
-                    _vm._v(_vm._s(slotProps.entry.description))
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "mb-1 text-gray-700" }, [
+                      _vm._v(_vm._s(slotProps.entry.description))
+                    ])
                   ])
                 ]
               )
@@ -48135,7 +48140,8 @@ var render = function() {
       _c(
         "router-link",
         {
-          staticClass: "btn btn-outline-primary",
+          staticClass:
+            "bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded",
           attrs: { slot: "btn-new-entry", to: { name: "specializations-new" } },
           slot: "btn-new-entry"
         },
