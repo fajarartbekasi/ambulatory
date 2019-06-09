@@ -94,7 +94,7 @@
                 <slot name="entry-data" :formData="formData" :formErrors="formErrors">
 
                 </slot>
-                <div class="flex justify-between items-center px-3 py-3 mb-3">
+                <div class="flex justify-center px-3 py-3 mb-3">
                     <a href="#" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" v-if="okToSave" @click="saveEntry">
                         Save
                     </a>

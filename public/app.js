@@ -43647,10 +43647,7 @@ var render = function() {
                 _vm._v(" "),
                 _c(
                   "div",
-                  {
-                    staticClass:
-                      "flex justify-between items-center px-3 py-3 mb-3"
-                  },
+                  { staticClass: "flex justify-center px-3 py-3 mb-3" },
                   [
                     _vm.okToSave
                       ? _c(
@@ -46337,88 +46334,126 @@ var render = function() {
         key: "entry-data",
         fn: function(slotProps) {
           return [
-            _c("div", { staticClass: "form-group row" }, [
-              _c(
-                "label",
-                {
-                  staticClass:
-                    "col-sm-4 col-form-label text-md-right font-weight-bold",
-                  attrs: { for: "role" }
-                },
-                [_vm._v("Role")]
-              ),
+            _c("div", { staticClass: "md:flex md:items-center mb-6" }, [
+              _c("div", { staticClass: "md:w-1/3" }, [
+                _c(
+                  "label",
+                  {
+                    staticClass:
+                      "block text-gray-900 font-bold md:text-right mb-1 md:mb-0 pr-4",
+                    attrs: { for: "inline-full-name" }
+                  },
+                  [_vm._v("\n                    Role\n                ")]
+                )
+              ]),
               _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "col-sm-6" },
-                [
-                  _c(
-                    "select",
-                    {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: slotProps.formData.role,
-                          expression: "slotProps.formData.role"
+              _c("div", { staticClass: "md:w-2/3" }, [
+                _c(
+                  "div",
+                  { staticClass: "inline-block relative w-64" },
+                  [
+                    _c(
+                      "select",
+                      {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: slotProps.formData.role,
+                            expression: "slotProps.formData.role"
+                          }
+                        ],
+                        staticClass:
+                          "block appearance-none w-full text-gray-900 bg-gray-200 border border-gray-200 hover:border-gray-200 focus:border-purple-500 px-4 py-2 pr-8 rounded leading-tight focus:outline-none",
+                        attrs: { id: "role" },
+                        on: {
+                          change: function($event) {
+                            var $$selectedVal = Array.prototype.filter
+                              .call($event.target.options, function(o) {
+                                return o.selected
+                              })
+                              .map(function(o) {
+                                var val = "_value" in o ? o._value : o.value
+                                return val
+                              })
+                            _vm.$set(
+                              slotProps.formData,
+                              "role",
+                              $event.target.multiple
+                                ? $$selectedVal
+                                : $$selectedVal[0]
+                            )
+                          }
                         }
-                      ],
-                      staticClass:
-                        "custom-select custom-select-lg bg-light border-0",
-                      attrs: { id: "role" },
-                      on: {
-                        change: function($event) {
-                          var $$selectedVal = Array.prototype.filter
-                            .call($event.target.options, function(o) {
-                              return o.selected
+                      },
+                      [
+                        _c("option", { attrs: { disabled: "", value: "" } }, [
+                          _vm._v("Please select one role")
+                        ]),
+                        _vm._v(" "),
+                        _c("option", [_vm._v("Doctor")]),
+                        _vm._v(" "),
+                        _c("option", [_vm._v("Admin")])
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("form-errors", {
+                      attrs: { errors: slotProps.formErrors.role }
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
+                      },
+                      [
+                        _c(
+                          "svg",
+                          {
+                            staticClass: "fill-current h-4 w-4",
+                            attrs: {
+                              xmlns: "http://www.w3.org/2000/svg",
+                              viewBox: "0 0 20 20"
+                            }
+                          },
+                          [
+                            _c("path", {
+                              attrs: {
+                                d:
+                                  "M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                              }
                             })
-                            .map(function(o) {
-                              var val = "_value" in o ? o._value : o.value
-                              return val
-                            })
-                          _vm.$set(
-                            slotProps.formData,
-                            "role",
-                            $event.target.multiple
-                              ? $$selectedVal
-                              : $$selectedVal[0]
-                          )
-                        }
-                      }
-                    },
-                    [
-                      _c("option", { attrs: { disabled: "", value: "" } }, [
-                        _vm._v("Please select one role")
-                      ]),
-                      _vm._v(" "),
-                      _c("option", [_vm._v("Doctor")]),
-                      _vm._v(" "),
-                      _c("option", [_vm._v("Admin")])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("form-errors", {
-                    attrs: { errors: slotProps.formErrors.role }
-                  })
-                ],
-                1
-              )
+                          ]
+                        )
+                      ]
+                    )
+                  ],
+                  1
+                )
+              ])
             ]),
             _vm._v(" "),
-            _c("div", { staticClass: "form-group row" }, [
-              _c(
-                "label",
-                {
-                  staticClass:
-                    "col-sm-4 col-form-label text-md-right font-weight-bold",
-                  attrs: { for: "email" }
-                },
-                [_vm._v("E-mail Address")]
-              ),
+            _c("div", { staticClass: "md:flex md:items-center mb-6" }, [
+              _c("div", { staticClass: "md:w-1/3" }, [
+                _c(
+                  "label",
+                  {
+                    staticClass:
+                      "block text-gray-900 font-bold md:text-right mb-1 md:mb-0 pr-4",
+                    attrs: { for: "inline-username" }
+                  },
+                  [
+                    _vm._v(
+                      "\n                    Email address\n                "
+                    )
+                  ]
+                )
+              ]),
               _vm._v(" "),
               _c(
                 "div",
-                { staticClass: "col-sm-6" },
+                { staticClass: "md:w-2/3" },
                 [
                   _c("input", {
                     directives: [
@@ -46430,7 +46465,7 @@ var render = function() {
                       }
                     ],
                     staticClass:
-                      "form-control form-control-lg bg-light border-0",
+                      "bg-gray-200 appearance-none border-2 border-gray-200 rounded w-64 py-2 px-4 text-gray-900 leading-tight focus:outline-none focus:bg-white focus:border-purple-500",
                     attrs: { id: "email", type: "email" },
                     domProps: { value: slotProps.formData.email },
                     on: {
@@ -46503,22 +46538,20 @@ var render = function() {
                   }
                 },
                 [
-                  _c(
-                    "div",
-                    { staticClass: "d-flex w-100 justify-content-between" },
-                    [
-                      _c("h5", { staticClass: "mb-1" }, [
+                  _c("div", { staticClass: "hover:bg-gray-100" }, [
+                    _c("div", { staticClass: "flex justify-between" }, [
+                      _c("h5", { staticClass: "mb-1 text-gray-600" }, [
                         _vm._v(_vm._s(slotProps.entry.email))
                       ]),
                       _vm._v(" "),
-                      _c("small", { staticClass: "text-muted" }, [
+                      _c("small", { staticClass: "text-gray-600" }, [
                         _vm._v(_vm._s(_vm.timeAgo(slotProps.entry.created_at)))
                       ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "mb-1" }, [
-                    _vm._v(_vm._s(slotProps.entry.role))
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "mb-1 text-gray-300" }, [
+                      _vm._v(_vm._s(slotProps.entry.role))
+                    ])
                   ])
                 ]
               )
@@ -46531,7 +46564,8 @@ var render = function() {
       _c(
         "router-link",
         {
-          staticClass: "btn btn-outline-primary",
+          staticClass:
+            "bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded",
           attrs: { slot: "btn-new-entry", to: { name: "invitations-new" } },
           slot: "btn-new-entry"
         },
@@ -48142,29 +48176,21 @@ var render = function() {
           key: "group-item",
           fn: function(slotProps) {
             return [
-              _c(
-                "div",
-                { staticClass: "list-group-item list-group-item-action" },
-                [
-                  _c(
-                    "div",
-                    { staticClass: "d-flex w-100 justify-content-between" },
-                    [
-                      _c("h5", { staticClass: "mb-1" }, [
-                        _vm._v(_vm._s(slotProps.entry.name))
-                      ]),
-                      _vm._v(" "),
-                      _c("small", { staticClass: "text-muted" }, [
-                        _vm._v(_vm._s(_vm.timeAgo(slotProps.entry.created_at)))
-                      ])
-                    ]
-                  ),
+              _c("div", { staticClass: "px-6 hover:bg-gray-100" }, [
+                _c("div", { staticClass: "flex justify-between" }, [
+                  _c("h5", { staticClass: "mb-1 text-gray-900" }, [
+                    _vm._v(_vm._s(slotProps.entry.name))
+                  ]),
                   _vm._v(" "),
-                  _c("p", { staticClass: "mb-1" }, [
-                    _vm._v(_vm._s(slotProps.entry.role))
+                  _c("small", { staticClass: "text-gray-500" }, [
+                    _vm._v(_vm._s(_vm.timeAgo(slotProps.entry.created_at)))
                   ])
-                ]
-              )
+                ]),
+                _vm._v(" "),
+                _c("p", { staticClass: "mb-1 text-gray-700" }, [
+                  _vm._v(_vm._s(slotProps.entry.role))
+                ])
+              ])
             ]
           }
         }
@@ -48174,7 +48200,8 @@ var render = function() {
       _c(
         "router-link",
         {
-          staticClass: "btn btn-outline-primary",
+          staticClass:
+            "bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded",
           attrs: { slot: "btn-new-entry", to: { name: "invitations-new" } },
           slot: "btn-new-entry"
         },
