@@ -47165,7 +47165,6 @@ var render = function() {
               _c(
                 "router-link",
                 {
-                  staticClass: "list-group-item list-group-item-action",
                   attrs: {
                     to: {
                       name: "medical-form-edit",
@@ -47176,19 +47175,19 @@ var render = function() {
                 [
                   _c(
                     "div",
-                    { staticClass: "d-flex w-100 justify-content-between" },
+                    { staticClass: "flex justify-between mb-1 mt-1 px-6" },
                     [
-                      _c("h5", { staticClass: "mb-1" }, [
+                      _c("h5", { staticClass: "text-gray-600" }, [
                         _vm._v(_vm._s(slotProps.entry.form_name))
                       ]),
                       _vm._v(" "),
-                      _c("small", { staticClass: "text-muted" }, [
+                      _c("small", { staticClass: "text-gray-600" }, [
                         _vm._v(_vm._s(_vm.timeAgo(slotProps.entry.created_at)))
                       ])
                     ]
                   ),
                   _vm._v(" "),
-                  _c("p", { staticClass: "mb-1" }, [
+                  _c("p", { staticClass: "text-gray-600 px-6" }, [
                     _vm._v(
                       _vm._s(slotProps.entry.full_name) +
                         " - " +
@@ -47206,7 +47205,8 @@ var render = function() {
       _c(
         "router-link",
         {
-          staticClass: "btn btn-outline-primary",
+          staticClass:
+            "bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded",
           attrs: { slot: "btn-new-entry", to: { name: "medical-form-new" } },
           slot: "btn-new-entry"
         },
