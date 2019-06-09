@@ -21,18 +21,16 @@
         :confirmation-cancel="alert.confirmationCancel"
         v-if="alert.type">
     </alert>
-    <sidebar-menu></sidebar-menu>
-
-    {{-- <div class="container">
-            <div class="row">
-                <div class="col-3 sidebar">
-                </div>
-
-                <div class="col-9 bg-white border p-0">
-                    <router-view></router-view>
-                </div>
+    <div class="flex mb-4">
+        <div class="w-1/3 max-h-full">
+            <div class="flex justify-center">
+                <sidebar-menu></sidebar-menu>
             </div>
-        </div> --}}
+        </div>
+        <div class="w-1/2 h-screen bg-white p-0">
+            <router-view></router-view>
+        </div>
+    </div>
 </div>
 
 <!-- Global Ambulatory Object -->

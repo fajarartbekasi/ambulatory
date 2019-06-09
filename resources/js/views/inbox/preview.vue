@@ -23,12 +23,12 @@
 <template>
     <div>
         <div class="card">
-            <div class="card-header p-3">
+            <div class="ml-3 p-3">
                 <h1>Inbox</h1>
             </div>
 
-            <div v-if="!ready" class="d-flex align-items-center justify-content-center p-5">
-                <div class="spinner-border text-primary" role="status">
+            <div v-if="!ready" class="flex items-center p-5">
+                <div class="spinner-border text-dark" role="status">
                     <span class="sr-only">Loading...</span>
                 </div>
             </div>

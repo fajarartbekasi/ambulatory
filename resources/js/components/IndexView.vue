@@ -52,19 +52,19 @@
 
 <template>
     <div class="card">
-        <div class="card-header d-flex align-items-center justify-content-between sticky-top">
-            <h1>{{this.title}}</h1>
+        <div class="flex items-center justify-between px-6 py-3 border-b border-gray-200">
+            <h1 class="text-dark font-bold text-xl">{{this.title}}</h1>
 
             <slot name="btn-new-entry"></slot>
         </div>
 
-        <div v-if="!ready" class="d-flex align-items-center justify-content-center p-5">
-            <div class="spinner-border text-primary" role="status">
+        <div v-if="!ready" class="flex items-center justify-center py-5">
+            <div class="flex items-center justify-center py-5 spinner-border text-primary" role="status">
                 <span class="sr-only">Loading...</span>
             </div>
         </div>
 
-        <div v-if="ready && entries.length == 0" class="p-5">
+        <div v-if="ready && entries.length == 0" class="py-5">
             <p class="text-center">No data were found</p>
         </div>
 

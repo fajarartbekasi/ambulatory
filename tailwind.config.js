@@ -1,9 +1,9 @@
 module.exports = {
+  important: true,
   theme: {
     fontFamily:{
-      'sans': [
-        'Helvetica', 'Arial', 'sans-serif'
-      ]
+      display: ['Gilory', 'sans-serif'],
+      body: ['Graphik', 'sans-serif'],
     },
     extend: {}
   },
