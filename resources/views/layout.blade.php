@@ -27,7 +27,7 @@
                 <sidebar-menu></sidebar-menu>
             </div>
         </div>
-        <div class="w-1/2 h-screen bg-white p-0">
+        <div class="w-1/2 max-h-full bg-white p-0">
             <router-view></router-view>
         </div>
     </div>

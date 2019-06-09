@@ -43611,23 +43611,20 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "card" },
+    { staticClass: "max-h-full" },
     [
-      _c("div", { staticClass: "card-header" }, [
-        _c("h1", [_vm._v(_vm._s(this.title))])
+      _c("div", { staticClass: "ml-3 pt-2 mb-4" }, [
+        _c("h1", { staticClass: "text-2xl text-teal-600 font-bold" }, [
+          _vm._v(_vm._s(this.title))
+        ])
       ]),
       _vm._v(" "),
       _vm._t("form-information"),
       _vm._v(" "),
       !_vm.ready
-        ? _c(
-            "div",
-            {
-              staticClass:
-                "d-flex align-items-center justify-content-center p-5"
-            },
-            [_vm._m(0)]
-          )
+        ? _c("div", { staticClass: "flex items-center justify-center p-5" }, [
+            _vm._m(0)
+          ])
         : _vm._e(),
       _vm._v(" "),
       _vm.ready && !_vm.entry
@@ -43639,7 +43636,7 @@ var render = function() {
         : _vm._e(),
       _vm._v(" "),
       _vm.ready && _vm.entry
-        ? _c("div", { staticClass: "card-body" }, [
+        ? _c("div", [
             _c(
               "form",
               [
@@ -43648,19 +43645,25 @@ var render = function() {
                   formErrors: _vm.formErrors
                 }),
                 _vm._v(" "),
-                _c("div", { staticClass: "form-group row mb-0" }, [
-                  _c("div", { staticClass: "col-md-8 offset-md-4" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass:
+                      "flex justify-between items-center px-3 py-3 mb-3"
+                  },
+                  [
                     _vm.okToSave
                       ? _c(
                           "a",
                           {
-                            staticClass: "btn btn-primary",
+                            staticClass:
+                              "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded",
                             attrs: { href: "#" },
                             on: { click: _vm.saveEntry }
                           },
                           [
                             _vm._v(
-                              "\n                        Save\n                    "
+                              "\n                    Save\n                "
                             )
                           ]
                         )
@@ -43670,19 +43673,20 @@ var render = function() {
                       ? _c(
                           "a",
                           {
-                            staticClass: "btn btn-danger",
+                            staticClass:
+                              "bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded",
                             attrs: { href: "#" },
                             on: { click: _vm.deleteEntry }
                           },
                           [
                             _vm._v(
-                              "\n                        Delete\n                    "
+                              "\n                    Delete\n                "
                             )
                           ]
                         )
                       : _vm._e()
-                  ])
-                ])
+                  ]
+                )
               ],
               2
             )
@@ -43699,7 +43703,10 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "div",
-      { staticClass: "spinner-border text-primary", attrs: { role: "status" } },
+      {
+        staticClass: "spinner-border text-gray-600",
+        attrs: { role: "status" }
+      },
       [_c("span", { staticClass: "sr-only" }, [_vm._v("Loading...")])]
     )
   }
@@ -46565,168 +46572,182 @@ var render = function() {
           key: "entry-data",
           fn: function(slotProps) {
             return [
-              _c("div", { staticClass: "row mb-4 border-bottom pb-4" }, [
-                _c("div", { staticClass: "col-sm-4" }, [
-                  _c("h6", { staticClass: "text-dark" }, [
-                    _c("strong", [_vm._v("Medical form name")])
-                  ]),
-                  _vm._v(" "),
-                  _c("small", { staticClass: "text-muted" }, [
-                    _vm._v("\n                    Give this form a name. e.g "),
-                    _c("mark", [_vm._v("My Form")]),
-                    _vm._v(", "),
-                    _c("mark", [_vm._v("My Grandpa")]),
-                    _vm._v(
-                      "\n                    or whatever is appropriate.\n                "
-                    )
-                  ])
-                ]),
+              _c("div", { staticClass: "mb-2" }, [
+                _c(
+                  "label",
+                  {
+                    staticClass:
+                      "block text-teal-900 font-bold md:text-justify ml-3 mb-1 md:mb-0 pr-4"
+                  },
+                  [_vm._v("\n                Medical form name\n            ")]
+                ),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-sm-8" }, [
-                  _c("div", { staticClass: "row" }, [
-                    _c(
-                      "div",
-                      { staticClass: "col-sm-12" },
-                      [
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: slotProps.formData.form_name,
-                              expression: "slotProps.formData.form_name"
-                            }
-                          ],
-                          staticClass: "form-control bg-light border-0",
-                          attrs: {
-                            type: "text",
-                            placeholder: "my-form",
-                            autofocus: ""
-                          },
-                          domProps: { value: slotProps.formData.form_name },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.$set(
-                                slotProps.formData,
-                                "form_name",
-                                $event.target.value
-                              )
-                            }
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("form-errors", {
-                          attrs: { errors: slotProps.formErrors.form_name }
-                        })
-                      ],
-                      1
+                _c(
+                  "p",
+                  { staticClass: "text-xs pt-2 text-gray-900 ml-3 mr-3" },
+                  [
+                    _vm._v(
+                      "\n                Give this form a name. e.g\n                "
+                    ),
+                    _c("span", { staticClass: "text-teal-600 text-bold" }, [
+                      _vm._v(
+                        "\n                    My form, My Grandpa\n                "
+                      )
+                    ]),
+                    _vm._v(
+                      "\n                or whatever is appropriate.\n            "
                     )
-                  ])
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "flex flex-wrap mb-2 border-b" }, [
+                _c(
+                  "div",
+                  { staticClass: "w-full px-3" },
+                  [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: slotProps.formData.form_name,
+                          expression: "slotProps.formData.form_name"
+                        }
+                      ],
+                      staticClass:
+                        "appearance-none block w-full bg-gray-200 text-gray-900 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-purple-500",
+                      attrs: {
+                        id: "my-form",
+                        type: "text",
+                        placeholder: "my-form"
+                      },
+                      domProps: { value: slotProps.formData.form_name },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            slotProps.formData,
+                            "form_name",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("form-errors", {
+                      attrs: { errors: slotProps.formErrors.form_name }
+                    })
+                  ],
+                  1
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "mb-4" }, [
+                _c(
+                  "label",
+                  {
+                    staticClass:
+                      "block text-teal-900 font-bold md:text-justify ml-3 mb-1 md:mb-0 pr-4"
+                  },
+                  [_vm._v("\n                Patient details\n            ")]
+                ),
+                _vm._v(" "),
+                _c("p", { staticClass: "text-xs pt-2 text-gray-900 ml-3" }, [
+                  _vm._v(
+                    "\n                All fields or than home phone ones are required.\n            "
+                  )
                 ])
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "row mb-4 border-bottom pb-4" }, [
-                _c("div", { staticClass: "col-sm-4" }, [
-                  _c("h6", { staticClass: "text-dark" }, [
-                    _c("strong", [_vm._v("Patient details")])
-                  ]),
-                  _vm._v(" "),
-                  _c("small", { staticClass: "text-muted" }, [
-                    _vm._v(
-                      "\n                    All fields other than home phone ones are required.\n                "
-                    )
-                  ])
-                ]),
+              _c("div", { staticClass: "flex flex-wrap mb-1" }, [
+                _c(
+                  "div",
+                  { staticClass: "w-full px-3" },
+                  [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: slotProps.formData.full_name,
+                          expression: "slotProps.formData.full_name"
+                        }
+                      ],
+                      staticClass:
+                        "appearance-none block w-full bg-gray-200 text-gray-900 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-purple-500",
+                      attrs: { type: "text", placeholder: "patient form name" },
+                      domProps: { value: slotProps.formData.full_name },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            slotProps.formData,
+                            "full_name",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("form-errors", {
+                      attrs: { errors: slotProps.formErrors.full_name }
+                    })
+                  ],
+                  1
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "flex flex-wrap mb-6" }, [
+                _c(
+                  "div",
+                  { staticClass: "w-full md:w-1/3 px-3 mb-6 md:mb-0" },
+                  [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: slotProps.formData.dob,
+                          expression: "slotProps.formData.dob"
+                        }
+                      ],
+                      staticClass:
+                        "appearance-none block w-full bg-gray-200 text-gray-900 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-purple-500",
+                      attrs: { type: "date" },
+                      domProps: { value: slotProps.formData.dob },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            slotProps.formData,
+                            "dob",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("form-errors", {
+                      attrs: { errors: slotProps.formErrors.dob }
+                    })
+                  ],
+                  1
+                ),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-sm-8" }, [
-                  _c("div", { staticClass: "row pb-2" }, [
+                _c(
+                  "div",
+                  { staticClass: "w-full md:w-1/3 px-3 mb-6 md:mb-0" },
+                  [
                     _c(
                       "div",
-                      { staticClass: "col-sm-12 pb-2" },
-                      [
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: slotProps.formData.full_name,
-                              expression: "slotProps.formData.full_name"
-                            }
-                          ],
-                          staticClass: "form-control bg-light border-0",
-                          attrs: {
-                            type: "text",
-                            placeholder: "Patient form name"
-                          },
-                          domProps: { value: slotProps.formData.full_name },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.$set(
-                                slotProps.formData,
-                                "full_name",
-                                $event.target.value
-                              )
-                            }
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("form-errors", {
-                          attrs: { errors: slotProps.formErrors.full_name }
-                        })
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "col-sm-6" },
-                      [
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: slotProps.formData.dob,
-                              expression: "slotProps.formData.dob"
-                            }
-                          ],
-                          staticClass: "form-control bg-light border-0",
-                          attrs: { type: "date" },
-                          domProps: { value: slotProps.formData.dob },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.$set(
-                                slotProps.formData,
-                                "dob",
-                                $event.target.value
-                              )
-                            }
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("small", { staticClass: "form-text text-muted" }, [
-                          _vm._v("date of birth")
-                        ]),
-                        _vm._v(" "),
-                        _c("form-errors", {
-                          attrs: { errors: slotProps.formErrors.dob }
-                        })
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "col-sm-6" },
+                      { staticClass: "relative" },
                       [
                         _c(
                           "select",
@@ -46739,7 +46760,8 @@ var render = function() {
                                 expression: "slotProps.formData.gender"
                               }
                             ],
-                            staticClass: "custom-select bg-light border-0",
+                            staticClass:
+                              "block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-900 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-purple-500",
                             on: {
                               change: function($event) {
                                 var $$selectedVal = Array.prototype.filter
@@ -46764,12 +46786,40 @@ var render = function() {
                             _c(
                               "option",
                               { attrs: { disabled: "", value: "" } },
-                              [_vm._v("Please select one gender")]
+                              [_vm._v("Please select one gender.")]
                             ),
                             _vm._v(" "),
                             _c("option", [_vm._v("Male")]),
                             _vm._v(" "),
                             _c("option", [_vm._v("Female")])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
+                          },
+                          [
+                            _c(
+                              "svg",
+                              {
+                                staticClass: "fill-current h-4 w-4",
+                                attrs: {
+                                  xmlns: "http://www.w3.org/2000/svg",
+                                  viewBox: "0 0 20 20"
+                                }
+                              },
+                              [
+                                _c("path", {
+                                  attrs: {
+                                    d:
+                                      "M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                                  }
+                                })
+                              ]
+                            )
                           ]
                         ),
                         _vm._v(" "),
@@ -46779,240 +46829,251 @@ var render = function() {
                       ],
                       1
                     )
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "row pb-2" }, [
-                    _c(
-                      "div",
-                      { staticClass: "col-sm-6" },
-                      [
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: slotProps.formData.city,
-                              expression: "slotProps.formData.city"
-                            }
-                          ],
-                          staticClass: "form-control bg-light border-0",
-                          attrs: { type: "text", placeholder: "city" },
-                          domProps: { value: slotProps.formData.city },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.$set(
-                                slotProps.formData,
-                                "city",
-                                $event.target.value
-                              )
-                            }
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("form-errors", {
-                          attrs: { errors: slotProps.formErrors.city }
-                        })
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "w-full md:w-1/3 px-3 mb-6 md:mb-0" },
+                  [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: slotProps.formData.city,
+                          expression: "slotProps.formData.city"
+                        }
                       ],
-                      1
-                    ),
+                      staticClass:
+                        "appearance-none block w-full bg-gray-200 text-gray-900 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-purple-500",
+                      attrs: { type: "text", placeholder: "City.." },
+                      domProps: { value: slotProps.formData.city },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            slotProps.formData,
+                            "city",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    }),
                     _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "col-sm-6" },
-                      [
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: slotProps.formData.state,
-                              expression: "slotProps.formData.state"
-                            }
-                          ],
-                          staticClass: "form-control bg-light border-0",
-                          attrs: { type: "text", placeholder: "state" },
-                          domProps: { value: slotProps.formData.state },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.$set(
-                                slotProps.formData,
-                                "state",
-                                $event.target.value
-                              )
-                            }
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("form-errors", {
-                          attrs: { errors: slotProps.formErrors.state }
-                        })
+                    _c("form-errors", {
+                      attrs: { errors: slotProps.formErrors.city }
+                    })
+                  ],
+                  1
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "flex flex-wrap mb-6 mb-2 " }, [
+                _c(
+                  "div",
+                  { staticClass: "w-full md:w-1/3 px-3 mb-6 md:mb-0" },
+                  [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: slotProps.formData.state,
+                          expression: "slotProps.formData.state"
+                        }
                       ],
-                      1
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "row pb-2" }, [
-                    _c(
-                      "div",
-                      { staticClass: "col-sm-6" },
-                      [
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: slotProps.formData.address,
-                              expression: "slotProps.formData.address"
-                            }
-                          ],
-                          staticClass: "form-control bg-light border-0",
-                          attrs: { type: "text", placeholder: "address" },
-                          domProps: { value: slotProps.formData.address },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.$set(
-                                slotProps.formData,
-                                "address",
-                                $event.target.value
-                              )
-                            }
+                      staticClass:
+                        "appearance-none block w-full bg-gray-200 text-gray-900 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-purple-500",
+                      attrs: { type: "text", placeholder: "state.." },
+                      domProps: { value: slotProps.formData.state },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
                           }
-                        }),
-                        _vm._v(" "),
-                        _c("form-errors", {
-                          attrs: { errors: slotProps.formErrors.address }
-                        })
-                      ],
-                      1
-                    ),
+                          _vm.$set(
+                            slotProps.formData,
+                            "state",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    }),
                     _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "col-sm-6" },
-                      [
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: slotProps.formData.zip_code,
-                              expression: "slotProps.formData.zip_code"
-                            }
-                          ],
-                          staticClass: "form-control bg-light border-0",
-                          attrs: { type: "text", placeholder: "zip code" },
-                          domProps: { value: slotProps.formData.zip_code },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.$set(
-                                slotProps.formData,
-                                "zip_code",
-                                $event.target.value
-                              )
-                            }
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("form-errors", {
-                          attrs: { errors: slotProps.formErrors.zip_code }
-                        })
+                    _c("form-errors", {
+                      attrs: { errors: slotProps.formErrors.state }
+                    })
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "w-full md:w-1/3 px-3 mb-6 md:mb-0" },
+                  [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: slotProps.formData.address,
+                          expression: "slotProps.formData.address"
+                        }
                       ],
-                      1
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "row pb-2" }, [
-                    _c(
-                      "div",
-                      { staticClass: "col-sm-6" },
-                      [
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: slotProps.formData.home_phone,
-                              expression: "slotProps.formData.home_phone"
-                            }
-                          ],
-                          staticClass: "form-control bg-light border-0",
-                          attrs: { type: "number", placeholder: "home phone" },
-                          domProps: { value: slotProps.formData.home_phone },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.$set(
-                                slotProps.formData,
-                                "home_phone",
-                                $event.target.value
-                              )
-                            }
+                      staticClass:
+                        "appearance-none block w-full bg-gray-200 text-gray-900 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-purple-500",
+                      attrs: { type: "text", placeholder: "address.." },
+                      domProps: { value: slotProps.formData.address },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
                           }
-                        }),
-                        _vm._v(" "),
-                        _c("form-errors", {
-                          attrs: { errors: slotProps.formErrors.home_phone }
-                        })
-                      ],
-                      1
-                    ),
+                          _vm.$set(
+                            slotProps.formData,
+                            "address",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    }),
                     _vm._v(" "),
-                    _c(
-                      "div",
-                      { staticClass: "col-sm-6" },
-                      [
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: slotProps.formData.cell_phone,
-                              expression: "slotProps.formData.cell_phone"
-                            }
-                          ],
-                          staticClass: "form-control bg-light border-0",
-                          attrs: { type: "number", placeholder: "cell phone" },
-                          domProps: { value: slotProps.formData.cell_phone },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.$set(
-                                slotProps.formData,
-                                "cell_phone",
-                                $event.target.value
-                              )
-                            }
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("form-errors", {
-                          attrs: { errors: slotProps.formErrors.cell_phone }
-                        })
+                    _c("form-errors", {
+                      attrs: { errors: slotProps.formErrors.address }
+                    })
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "w-full md:w-1/3 px-3 mb-6 md:mb-0" },
+                  [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: slotProps.formData.zip_code,
+                          expression: "slotProps.formData.zip_code"
+                        }
                       ],
-                      1
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "row pb-2" }, [
+                      staticClass:
+                        "appearance-none block w-full bg-gray-200 text-gray-900 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-purple-500",
+                      attrs: { type: "text", placeholder: "Zip code.." },
+                      domProps: { value: slotProps.formData.zip_code },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            slotProps.formData,
+                            "zip_code",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("form-errors", {
+                      attrs: { errors: slotProps.formErrors.zip_code }
+                    })
+                  ],
+                  1
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "flex flex-wrap mb-6" }, [
+                _c(
+                  "div",
+                  { staticClass: "w-full md:w-1/3 px-3 mb-6 md:mb-0" },
+                  [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: slotProps.formData.home_phone,
+                          expression: "slotProps.formData.home_phone"
+                        }
+                      ],
+                      staticClass:
+                        "appearance-none block w-full bg-gray-200 text-gray-900 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-purple-500",
+                      attrs: {
+                        type: "number",
+                        placeholder: "Home phone number.."
+                      },
+                      domProps: { value: slotProps.formData.home_phone },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            slotProps.formData,
+                            "home_phone",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("form-errors", {
+                      attrs: { errors: slotProps.formErrors.home_phone }
+                    })
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "w-full md:w-1/3 px-3 mb-6 md:mb-0" },
+                  [
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: slotProps.formData.cell_phone,
+                          expression: "slotProps.formData.cell_phone"
+                        }
+                      ],
+                      staticClass:
+                        "appearance-none block w-full bg-gray-200 text-gray-900 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-purple-500",
+                      attrs: { type: "number", placeholder: "Cell phone.." },
+                      domProps: { value: slotProps.formData.cell_phone },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(
+                            slotProps.formData,
+                            "cell_phone",
+                            $event.target.value
+                          )
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c("form-errors", {
+                      attrs: { errors: slotProps.formErrors.cell_phone }
+                    })
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "w-full md:w-1/3 px-3 mb-6 md:mb-0 " },
+                  [
                     _c(
                       "div",
-                      { staticClass: "col-sm-6" },
+                      { staticClass: "relative" },
                       [
                         _c(
                           "select",
@@ -47025,7 +47086,8 @@ var render = function() {
                                 expression: "slotProps.formData.marital_status"
                               }
                             ],
-                            staticClass: "custom-select bg-light border-0",
+                            staticClass:
+                              "block appearance-none w-full bg-gray-200 border-gray-900 text-gray-900 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-purple-500",
                             on: {
                               change: function($event) {
                                 var $$selectedVal = Array.prototype.filter
@@ -47053,11 +47115,39 @@ var render = function() {
                               [_vm._v("Marital status")]
                             ),
                             _vm._v(" "),
-                            _c("option", [_vm._v("Married")]),
-                            _vm._v(" "),
                             _c("option", [_vm._v("Single")]),
                             _vm._v(" "),
+                            _c("option", [_vm._v("Maried")]),
+                            _vm._v(" "),
                             _c("option", [_vm._v("Divorced")])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700"
+                          },
+                          [
+                            _c(
+                              "svg",
+                              {
+                                staticClass: "fill-current h-4 w-4",
+                                attrs: {
+                                  xmlns: "http://www.w3.org/2000/svg",
+                                  viewBox: "0 0 20 20"
+                                }
+                              },
+                              [
+                                _c("path", {
+                                  attrs: {
+                                    d:
+                                      "M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                                  }
+                                })
+                              ]
+                            )
                           ]
                         ),
                         _vm._v(" "),
@@ -47067,23 +47157,39 @@ var render = function() {
                       ],
                       1
                     )
-                  ])
-                ])
+                  ]
+                )
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "row" }, [
-                _c("div", { staticClass: "col-sm-4" }, [
-                  _c("h5", { staticClass: "text-dark" }, [
-                    _vm._v("What's Next?")
-                  ])
+              _c("div", { staticClass: "flex justify-between mb-2 px-3" }, [
+                _c("div", { staticClass: "w-1/3" }, [
+                  _c(
+                    "label",
+                    {
+                      staticClass:
+                        "text-xs sm:text-xl text-teal-600 font-bold  mb-6",
+                      attrs: { for: "" }
+                    },
+                    [
+                      _vm._v(
+                        "\n                    What's Next ??\n                "
+                      )
+                    ]
+                  )
                 ]),
                 _vm._v(" "),
-                _c("div", { staticClass: "col-sm-8" }, [
-                  _c("p", { staticClass: "text-dark" }, [
-                    _vm._v(
-                      "\n                    Once you have the medical form, you can select the form when book an appointment.\n                "
-                    )
-                  ])
+                _c("div", { staticClass: "sm:w-1/2 " }, [
+                  _c(
+                    "p",
+                    {
+                      staticClass: "text-xs mr-1 ml-3 sm:text-sm text-teal-600"
+                    },
+                    [
+                      _vm._v(
+                        "\n                    Once you have the medical form,\n                    you can select the form when making an appointment.\n                "
+                      )
+                    ]
+                  )
                 ])
               ])
             ]
@@ -47095,36 +47201,40 @@ var render = function() {
       _c(
         "div",
         {
-          staticClass: "alert alert-info form-title-section d-flex rounded-0",
-          attrs: { slot: "form-information" },
+          staticClass: "bg-teal-100 text-teal-800 px-4 py-3 mb-4",
+          attrs: { slot: "form-information", role: "alert" },
           slot: "form-information"
         },
         [
-          _c("div", { staticClass: "mr-3" }, [
-            _c(
-              "svg",
-              {
-                staticClass: "fill-info",
-                attrs: {
-                  xmlns: "http://www.w3.org/2000/svg",
-                  viewBox: "0 0 20 20"
-                }
-              },
-              [
-                _c("path", {
+          _c("div", { staticClass: "flex items-center" }, [
+            _c("div", { staticClass: "py-2" }, [
+              _c(
+                "svg",
+                {
+                  staticClass: "fill-current h-6 w-6 text-teal-500 mr-4",
                   attrs: {
-                    d:
-                      "M10 20C4.477 20 0 15.523 0 10S4.477 0 10 0s10 4.477 10 10-4.477 10-10 10zm0-2c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm-.5-5h1c.276 0 .5.224.5.5v1c0 .276-.224.5-.5.5h-1c-.276 0-.5-.224-.5-.5v-1c0-.276.224-.5.5-.5zm0-8h1c.276 0 .5.224.5.5V8l-.5 3-1 .5L9 8V5.5c0-.276.224-.5.5-.5z"
+                    xmlns: "http://www.w3.org/2000/svg",
+                    viewBox: "0 0 20 20"
                   }
-                })
-              ]
-            )
-          ]),
-          _vm._v(" "),
-          _c("span", [
-            _vm._v(
-              "\n            This Medical form is about the patient's biodata,\n            you can have more than one form for your family,\n            so please answer thoughtfully and carefully.\n        "
-            )
+                },
+                [
+                  _c("path", {
+                    attrs: {
+                      d:
+                        "M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zm12.73-1.41A8 8 0 1 0 4.34 4.34a8 8 0 0 0 11.32 11.32zM9 11V9h2v6H9v-4zm0-6h2v2H9V5z"
+                    }
+                  })
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", [
+              _c("p", { staticClass: "sm:text-sm text-xs" }, [
+                _vm._v(
+                  "\n                    This Medical form is about the patient's biodata, you can have more than one form for your family, so please answer\n                    thoughtfully and carefully.\n                "
+                )
+              ])
+            ])
           ])
         ]
       )

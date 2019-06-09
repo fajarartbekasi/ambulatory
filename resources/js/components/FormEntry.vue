@@ -72,15 +72,15 @@
 </script>
 
 <template>
-    <div class="card">
-        <div class="card-header">
-            <h1>{{this.title}}</h1>
+    <div class="max-h-full">
+        <div class="ml-3 pt-2 mb-4">
+            <h1 class="text-2xl text-teal-600 font-bold">{{this.title}}</h1>
         </div>
 
         <slot name="form-information"></slot>
 
-        <div v-if="!ready" class="d-flex align-items-center justify-content-center p-5">
-            <div class="spinner-border text-primary" role="status">
+        <div v-if="!ready" class="flex items-center justify-center p-5">
+            <div class="spinner-border text-gray-600" role="status">
                 <span class="sr-only">Loading...</span>
             </div>
         </div>
@@ -89,20 +89,20 @@
             <p class="text-center">No data were found</p>
         </div>
 
-        <div class="card-body" v-if="ready && entry">
+        <div v-if="ready && entry">
             <form>
-                <slot name="entry-data" :formData="formData" :formErrors="formErrors"></slot>
+                <slot name="entry-data" :formData="formData" :formErrors="formErrors">
 
-                <div class="form-group row mb-0">
-                    <div class="col-md-8 offset-md-4">
-                        <a href="#" class="btn btn-primary" v-if="okToSave" @click="saveEntry">
-                            Save
-                        </a>
-                        <a href="#" class="btn btn-danger" v-if="okToDelete && id != 'new'" @click="deleteEntry">
-                            Delete
-                        </a>
-                    </div>
+                </slot>
+                <div class="flex justify-between items-center px-3 py-3 mb-3">
+                    <a href="#" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" v-if="okToSave" @click="saveEntry">
+                        Save
+                    </a>
+                    <a href="#" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded" v-if="okToDelete && id != 'new'" @click="deleteEntry">
+                        Delete
+                    </a>
                 </div>
+
             </form>
         </div>
     </div>
