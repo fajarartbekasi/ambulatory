@@ -51,7 +51,7 @@
 </script>
 
 <template>
-    <div class="card">
+    <div class="w-1/2 h-screen bg-white p-0">
         <div class="flex items-center justify-between px-6 py-3 border-b border-gray-200">
             <h1 class="text-dark font-bold text-xl">{{this.title}}</h1>
 

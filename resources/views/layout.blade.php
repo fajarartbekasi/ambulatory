@@ -27,9 +27,8 @@
                 <sidebar-menu></sidebar-menu>
             </div>
         </div>
-        <div class="w-1/2 max-h-full bg-white p-0">
-            <router-view></router-view>
-        </div>
+        <router-view></router-view>
+
     </div>
 </div>
 

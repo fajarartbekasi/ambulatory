@@ -72,7 +72,7 @@
 </script>
 
 <template>
-    <div class="max-h-full">
+    <div class="w-1/2 max-h-full bg-white p-0">
         <div class="ml-3 pt-2 mb-4">
             <h1 class="text-2xl text-teal-600 font-bold">{{this.title}}</h1>
         </div>

@@ -43611,7 +43611,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "max-h-full" },
+    { staticClass: "w-1/2 max-h-full bg-white p-0" },
     [
       _c("div", { staticClass: "ml-3 pt-2 mb-4" }, [
         _c("h1", { staticClass: "text-2xl text-teal-600 font-bold" }, [
@@ -43764,7 +43764,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "card" }, [
+  return _c("div", { staticClass: "w-1/2 h-screen bg-white p-0" }, [
     _c(
       "div",
       {
@@ -47283,26 +47283,30 @@ var render = function() {
                   }
                 },
                 [
-                  _c(
-                    "div",
-                    { staticClass: "flex justify-between mb-1 mt-1 px-6" },
-                    [
-                      _c("h5", { staticClass: "text-gray-600" }, [
-                        _vm._v(_vm._s(slotProps.entry.form_name))
-                      ]),
-                      _vm._v(" "),
-                      _c("small", { staticClass: "text-gray-600" }, [
-                        _vm._v(_vm._s(_vm.timeAgo(slotProps.entry.created_at)))
-                      ])
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _c("p", { staticClass: "text-gray-600 px-6" }, [
-                    _vm._v(
-                      _vm._s(slotProps.entry.full_name) +
-                        " - " +
-                        _vm._s(slotProps.entry.address)
-                    )
+                  _c("div", { staticClass: "hover:bg-gray-100" }, [
+                    _c(
+                      "div",
+                      { staticClass: "flex justify-between mb-1 px-6" },
+                      [
+                        _c("h5", { staticClass: "text-gray-600" }, [
+                          _vm._v(_vm._s(slotProps.entry.form_name))
+                        ]),
+                        _vm._v(" "),
+                        _c("small", { staticClass: "text-gray-600" }, [
+                          _vm._v(
+                            _vm._s(_vm.timeAgo(slotProps.entry.created_at))
+                          )
+                        ])
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "text-gray-600 px-6" }, [
+                      _vm._v(
+                        _vm._s(slotProps.entry.full_name) +
+                          " - " +
+                          _vm._s(slotProps.entry.address)
+                      )
+                    ])
                   ])
                 ]
               )
