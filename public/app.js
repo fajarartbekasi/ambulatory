@@ -46538,7 +46538,7 @@ var render = function() {
                   }
                 },
                 [
-                  _c("div", { staticClass: "hover:bg-gray-100" }, [
+                  _c("div", { staticClass: "px-6 hover:bg-gray-100" }, [
                     _c("div", { staticClass: "flex justify-between" }, [
                       _c("h5", { staticClass: "mb-1 text-gray-600" }, [
                         _vm._v(_vm._s(slotProps.entry.email))
